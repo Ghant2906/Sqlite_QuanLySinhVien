@@ -43,12 +43,10 @@ public class EditOrAdd extends AppCompatActivity implements View.OnClickListener
         SinhVienDAO svDAO = new SinhVienDAO(this);
         SinhVien sinhVien = svDAO.getSVbyId(id);
 
-        String gioiTinh = sinhVien.getGioiTinhSV();
-
         editTextID_335.setText(String.valueOf(sinhVien.getIdSV()));
         editTextName_335.setText(sinhVien.getNameSV());
         editTextNamSinh_335.setText(String.valueOf(sinhVien.getNamSinhSV()));
-        if(gioiTinh != null && gioiTinh.equals("Nam"))
+        if(sinhVien.getGioiTinhSV().equals("Nam"))
             rbtnNam.setChecked(true);
         else
             rbtnNu.setChecked(true);
